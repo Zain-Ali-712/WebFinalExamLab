@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attractions</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <h1>Tourist Attractions</h1>
+  <ul>
+    <% attractions.forEach(function(attraction) { %>
+      <li>
+        <h2><%= attraction.name %></h2>
+        <p><%= attraction.description %></p>
+        <p>Location: <%= attraction.location %></p>
+        <p>Rating: <%= attraction.rating %></p>
+        <form action="/reviews/<%= attraction._id %>" method="POST">
+          <textarea name="reviewText" placeholder="Write a review..." required></textarea>
+          <input type="number" name="rating" placeholder="Rating (1-5)" required>
+          <button type="submit">Submit Review</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <a href="/attractions">Add Attraction</a>
+</body>
+</html>

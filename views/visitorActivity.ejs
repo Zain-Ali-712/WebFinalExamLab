@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visitor Activity</title>
+</head>
+<body>
+  <h1>Visitor Activity</h1>
+  <ul>
+    <% visitors.forEach(visitor => { %>
+      <li><%= visitor.name %>: Reviewed <%= visitor.reviewCount %> attractions</li>
+    <% }) %>
+  </ul>
+</body>
+</html>
